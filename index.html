@@ -5,33 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
     <link href="./style.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="dashboard-container">
-      <aside>
-        <header>
+      <!-- サイドバー -->
+      <aside class="sidebar">
+        <!-- ヘッダー -->
+        <header class="sidebar-header">
           <a class="sidebar-home" href="#" data-tab="home">
             <span class="ri-home-line"></span>
             <span>Home</span>
           </a>
         </header>
+        <!-- メニュー -->
+        <ul>
+          <li class="sidebar-menu-item tab-item" data-tab="converter">
+            <span class="ri-scales-3-line"></span>
+            <span>Unit Converter</span>
+          </li>
+        </ul>
       </aside>
-      <main>
-        <section id="home">
-          <header>
+      <!-- メインコンテンツ -->
+      <main class="main-content">
+        <!-- ホームセクション -->
+        <section class="content-section" id="home">
+          <!-- ヘッダー -->
+          <header class="section-header">
             <div class="profile-icon">
               <span class="ri-user-smile-line"></span>
             </div>
-            <h1 class="title">Welcome to Your Personal Dashboard</h1>
-            <h2 class="subtitle">Make your daily life more convenient and enjoyable</h2>
+            <h1 class="section-title">Welcome to Your Personal Dashboard</h1>
+            <h2 class="section-subtitle">
+              Make your daily life more convenient and enjoyable
+            </h2>
           </header>
-          <div class="message-container">
-            <p>This dashboard is a tool to enrich your daily life. You can easily use essential features such as diary entries, memo management, and checking weather information.</p>
-            <p>Small daily records become irreplaceable memories, and efficient task management leads to fulfilling days. Please use this as a partner that supports your everyday life.</p>
+          <!-- 本文 -->
+          <div class="section-body">
+            <div class="section-description">
+              <p>
+                This dashboard is a tool to enrich your daily life. You can
+                easily use essential features such as diary entries, memo
+                management, and checking weather information.
+              </p>
+              <p>
+                Small daily records become irreplaceable memories, and efficient
+                task management leads to fulfilling days. Please use this as a
+                partner that supports your everyday life.
+              </p>
+            </div>
+          </div>
+        </section>
+        <!-- 単位変換セクション -->
+        <section class="content-section hidden" id="converter">
+          <!-- ヘッダー -->
+          <header class="section-header">
+            <h1 class="section-title">Length Unit Conversion</h1>
+          </header>
+          <!-- 本文（フォーム） -->
+          <div class="section-body">
+            <form class="converter-form">
+              <!-- タイトル -->
+              <div class="form-group">
+                <p class="form-label">Length Unit Conversion</p>
+              </div>
+              <!-- 値入力 -->
+              <div class="form-group">
+                <p class="form-label">Value</p>
+                <input
+                  class="converter-input form-input"
+                  type="number"
+                  value="1000"
+                />
+              </div>
+              <!-- 単位 -->
+              <div class="form-row">
+                <div class="form-group">
+                  <p class="form-label">From</p>
+                  <select class="converter-from form-input"></select>
+                </div>
+                <div class="form-group">
+                  <p class="form-label">To</p>
+                  <select class="converter-to form-input"></select>
+                </div>
+              </div>
+              <div class="converter-result-container">
+                <p class="converter-result"></p>
+              </div>
+            </form>
           </div>
         </section>
       </main>
     </div>
+    <script src="./main.js" type="module"></script>
   </body>
 </html>
